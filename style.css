@@ -1,0 +1,1040 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* NEW: Rule to prevent body scrolling when mobile menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Modernized Base Typography */
+h1{
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+h2{
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+p{
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+/* --- Header Styles --- */
+.scrolled{
+    background-color: white;
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+}
+/* Change link color to black when scrolled */
+.scrolled .nav-links a{
+    color: #000000;
+}
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    width: 100%;
+    color: white; /* Default text color for logo and unscrolled items */
+    transition: 0.3s ease-in-out;
+    z-index: 100;
+}
+
+/* Desktop Menu Display */
+.nav-links.mobile-nav-menu {
+    display: flex; 
+    position: static;
+    flex-direction: row;
+}
+
+/* Default (Unscrolled) Link Color - White (Visible over hero background) */
+header .nav-links a{
+    color: white; 
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: 0.3s ease;
+}
+header .nav-links a:hover {
+    color: #ff1489;
+}
+.scrolled .nav-links a:hover {
+    color: #ff1489;
+}
+
+/* Menu Toggle Button (Hamburger) */
+.menu{
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: transparent; 
+    padding: 0;
+    border-radius: 0;
+}
+/* Remove background when scrolled to keep header clean */
+.scrolled .menu {
+    background-color: transparent; 
+}
+
+.menu div{
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    border-radius: 100px;
+    transition: 0.4s;
+}
+.scrolled .menu div{
+    background-color: #000000;
+}
+
+/* FIX: Make bars stand out brightly when the menu is active (in the X position) */
+.menu.active .bar1, 
+.menu.active .bar3 {
+    background: linear-gradient(90deg, #ff1489, #ff8800);
+}
+
+.menu.active .bar1{
+    transform: rotate(-45deg) translate(-6px, 10px);
+}
+.menu.active .bar2{
+    opacity: 0;
+}
+.menu.active .bar3{
+    transform: rotate(45deg) translate(-6px, -10px);
+}
+.showOnMobile{
+    display: none; /* Hidden by default on desktop */
+}
+
+/* --- Mobile Menu Overlay Styles (ONLY active on mobile) --- */
+.mobile-nav-menu a {
+    /* Styles for links when they are *inside* the mobile overlay */
+    font-size: 2.5rem;
+    padding: 20px 0;
+    color: white; /* MUST be white for visibility in the dark overlay */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-left: 0; 
+}
+
+.mobile-nav-menu a:hover {
+    background: linear-gradient(90deg, #ff1489, #ff8800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* --- End Mobile Menu Styles --- */
+
+/* --- Hero Section (REORGANIZED & RESIZED) --- */
+.background{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-image: url(src/images/medium-shot-people-hugging.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 120vh;
+    width: 100%;
+    z-index: -100;
+}
+.hero{
+    height: 100vh;
+    width: 100%;
+}
+.hero .content{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.hero .content .heading{ 
+    margin-bottom: 25px;
+}
+
+.hero .content .heading span{
+    background: linear-gradient(90deg, #ff1489, #9900ff);
+    padding: 0 20px;
+    border-radius: 5px;
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+/* Features List for cleaner structure and alignment */
+.hero .content .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 400px; 
+    margin-top: 20px; 
+    margin-bottom: 30px; /* Space above buttons */
+    /* Center the list itself within the .content div */
+    align-self: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align list items to the start of the list */
+    text-align: left; /* Ensure text is left-aligned within the list */
+}
+
+.hero .content .features-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    line-height: 2.2; /* Spacing between list items */
+}
+
+.hero .content .features-list li i {
+    font-size: 1.1rem;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    background: linear-gradient(0deg, #ff1489, #9900ff);
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    flex-shrink: 0; /* Prevents icon from shrinking on small screens */
+}
+
+/* --- MODERN CTA BUTTONS START --- */
+.hero .content .buttons{
+    margin-top: 30px;
+    gap: 20px;
+    display: flex;
+}
+
+/* Base CTA styles for both buttons */
+.hero .content .buttons a {
+    padding: 14px 30px; /* Slightly larger padding */
+    font-size: 1.1rem; /* Slightly larger font */
+    text-decoration: none;
+    border-radius: 8px; /* Modern rounded corners */
+    transition: all 0.3s ease;
+    border: 2px solid transparent; /* Base for border */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Primary CTA: Gradient Fill (.join) */
+.hero .content .buttons .join {
+    background: linear-gradient(90deg, #ff1489, #ff8800); 
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 20, 137, 0.4); /* Subtle pink shadow */
+    border-color: transparent;
+}
+
+.hero .content .buttons .join:hover {
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 12px 30px rgba(255, 20, 137, 0.6);
+}
+
+/* Secondary CTA: Ghost Button (White Outline) (.readmore) */
+.hero .content .buttons .readmore {
+    background: transparent;
+    color: white;
+    border-color: white; 
+}
+/* Icon styling for secondary button */
+.hero .content .buttons .readmore i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.hero .content .buttons .readmore:hover {
+    background: white; /* Fill with white on hover */
+    color: #ff1489; /* Change text to vibrant pink on hover */
+    transform: translateY(-1px);
+}
+.hero .content .buttons .readmore:hover i {
+    transform: translateY(3px); /* Small downward movement for the arrow */
+}
+
+/* --- MODERN CTA BUTTONS END --- */
+
+/* --- Main Content Sections --- */
+.container{
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 50px;
+}
+.container .images{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    text-align: center;
+}
+.container i{
+    font-size: 2.5rem;
+    padding: 20px;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: linear-gradient(0deg, #ff1489, #ff8800);
+    border-radius: 50%;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.container .image img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.container .text-image{
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 20px 0;
+}
+.container .text-image .text{
+    width: 50%;
+    text-align: left;
+}
+.container .text-image .image{
+    width: 50%;
+}
+.container .text-image .image img{
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.about .text h2{
+    color: transparent;
+    background: linear-gradient(90deg, #ff1489, #ff8800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.about .text-image .image{
+    width: 40%; 
+}
+
+/* --- NEW BLOG SECTION STYLES --- */
+
+#blog {
+    min-height: auto; /* Allow height to adjust based on content */
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#blog .images i {
+    /* Use the feather icon for the blog section header, inheriting base icon styles */
+    font-size: 2.5rem;
+    padding: 20px;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: linear-gradient(0deg, #ff1489, #ff8800);
+    border-radius: 50%;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.blog-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px; /* Fixed height for visual consistency */
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.card-content p.meta {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.card-content .read-more-link {
+    display: inline-block;
+    color: #ff1489;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+}
+
+.card-content .read-more-link:hover {
+    color: #ff8800;
+}
+
+.card-content .read-more-link i {
+    margin-left: 5px;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.card-content .read-more-link:hover i {
+    transform: translateX(3px);
+}
+
+.view-all-btn {
+    /* Style for the 'View All Posts' button */
+    display: inline-block;
+    padding: 12px 30px;
+    margin-top: 40px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 8px; /* Consistent with hero buttons */
+    background: linear-gradient(90deg, #ff1489, #ff8800);
+    color: white;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.view-all-btn:hover {
+    opacity: 0.9;
+}
+/* --- END BLOG SECTION STYLES --- */
+
+/* --- CONTACT SECTION STYLES (Retained) --- */
+#contact {
+    min-height: 50vh;
+}
+
+#contact .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+    max-width: 450px; 
+    width: 100%;
+    text-align: center;
+}
+
+#contact .contact-grid p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Styling for the icons within the contact details to differentiate from the main section icon */
+#contact .contact-grid p i {
+    background: none; 
+    color: #ff1489; 
+    width: auto;
+    height: auto;
+    font-size: 1.5rem; 
+    margin-right: 15px;
+    padding: 0;
+}
+/* --- END CONTACT SECTION STYLES --- */
+
+
+/* --- Footer Styles --- */
+footer {
+    background: linear-gradient(90deg, #ff1489, #ff8800); 
+    color: #ffffff;
+    padding: 60px 20px 20px;
+    font-size: 1rem;
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.footer-col {
+    /* Adjusted flex basis for 3 columns */
+    flex: 1 1 calc(33.333% - 40px);
+    padding: 0 10px;
+}
+
+.footer-col h3 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-col h4 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 2px;
+    width: 50px;
+    background-color: #ffffff;
+}
+
+.footer-col p {
+    margin-bottom: 10px;
+    line-height: 1.4;
+    font-size: 1rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.footer-col ul li a:hover {
+    color: #222222;
+    transform: translateX(5px);
+}
+
+.social-icons {
+    margin-top: 25px;
+}
+
+.social-icons a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff1489;
+    background-color: #ffffff;
+    transform: translateY(-5px);
+}
+
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+/* --- CSS for Mobile Devices --- */
+@media (max-width: 700px) {
+    header{
+        padding: 15px 20px;
+    }
+    
+    /* Ensure the menu button is on top of the overlay */
+    .menu.showOnMobile{
+        display: flex;
+        z-index: 101; 
+    }
+    
+    /* Hide desktop links (individual <a> tags) */
+    header .nav-links a {
+        display: none;
+    }
+    
+    /* Mobile Menu Container Styling */
+    .nav-links.mobile-nav-menu {
+        display: flex; 
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 99;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        /* Hidden by default */
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    /* Show menu when toggle button is active */
+    .menu.active + .mobile-nav-menu {
+        transform: translateX(0); 
+    }
+
+    /* Override to show mobile links once the overlay is active */
+    .menu.active + .mobile-nav-menu a {
+        display: block; 
+    }
+    
+    /* Mobile Menu Links - Ensure they are bright white for the dark overlay */
+    .nav-links.mobile-nav-menu a {
+        color: white;
+    }
+
+    /* Stack buttons vertically on mobile */
+    .hero .content .buttons {
+        flex-direction: column;
+    }
+
+    /* Main Content Responsiveness */
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .buttons{
+        flex-direction: column;
+    }
+    .container{
+        padding: 50px 20px;
+    }
+    
+    /* Blog Grid Fix */
+    .blog-grid {
+        gap: 30px;
+    }
+
+    .container .text-image{
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .container .text-image .text,
+    .container .text-image .image{
+        width: 100%;
+        text-align: center;
+    }
+    .about .text-image .image{
+        width: 60%;
+    }
+    
+    .blue-red-gradient .images img{
+        width: 80%;
+    }
+
+    /* Contact Section Mobile Fixes */
+    #contact .contact-grid p {
+        justify-content: flex-start; /* Align text left on mobile for better readability */
+    }
+    #contact .contact-grid {
+        align-items: flex-start;
+        max-width: none;
+    }
+
+    /* Footer responsiveness */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-col {
+        padding: 20px 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-col:last-child {
+        border-bottom: none;
+    }
+
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        text-align: center;
+    }
+}
+
+/* --- Scroll Reveal Animation --- */
+.reveal{
+    transition: 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 10x;
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- New Styles for Dynamic Blog Section --- */
+
+.blog-feed {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.blog-card {
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-content .meta {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.read-more-link {
+    display: inline-block;
+    color: #007bff; /* Use a brand color */
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.read-more-link:hover {
+    color: #0056b3;
+}
+
+/* --- Post Form Styles --- */
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.post-form label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.post-form input[type="text"],
+.post-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.post-form input[type="text"]:focus,
+.post-form textarea:focus {
+    border-color: #007bff; /* Focus highlight */
+    outline: none;
+}
+
+.post-form textarea {
+    resize: vertical;
+    min-height: 200px;
+}
+
+.post-form button.join {
+    margin-top: 25px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.post-form button.join:hover {
+    background-color: #0056b3;
+}
+
+/* --- Mobile Scroll Lock Fix --- */
+
+/* This CSS rule works with the toggleMenu() function in script.js */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Mobile Responsiveness for Blog Grid */
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+        gap: 20px;
+    }
+    .post-form {
+        margin: 20px auto;
+        padding: 20px;
+    }
+}
+
+/* style.css (NEW STYLES FOR AUTH & COMMENTS) */
+
+/* --- Comment Section Styles --- */
+.comment-section {
+    padding: 30px 0;
+}
+
+.comment-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-left: 5px solid #ff1489; /* A distinct community color */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.comment-meta {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.comment-content-text {
+    font-size: 1.0rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Re-styling the .post-form (reused for the comment form) */
+#comment-form {
+    padding: 20px; /* Make it a bit smaller */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    background-color: white;
+}
+#comment-form textarea {
+    min-height: 100px;
+}
+
+/* --- Auth Form Styles --- */
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f7fa;
+    padding: 20px;
+}
+
+.auth-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    /* Ensuring reveal works on this page */
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.auth-form.active {
+    opacity: 1;
+}
+
+.auth-form h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.toggle-switch {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    padding: 5px;
+}
+
+.toggle-switch button {
+    flex: 1;
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.0rem;
+    font-weight: 600;
+    color: #555;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.toggle-switch button.active {
+    background-color: #ff1489;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Auth Input Fields */
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* Social Buttons */
+.social-login {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.social-login p {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.social-login button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 1.0rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.social-login button:hover {
+    opacity: 0.9;
+}
+
+.social-login button i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.google-btn { background-color: #db4437; color: white; border: none; }
+.apple-btn { background-color: #000000; color: white; border: none; }
+.microsoft-btn { background-color: #f1532f; color: white; border: none; }
+.facebook-btn { background-color: #4267b2; color: white; border: none; }
+
+.form-message {
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <title>miCommunity</title>
+</head>
+<body>
+    <header id="transparent" class="transparent">
+        <div class="logo"><h3>miCommunity</h3></div>
+        <div id="menu" class="menu showOnMobile">
+            <div id="bar" class="bar1"></div>
+            <div id="bar" class="bar2"></div>
+            <div id="bar" class="bar3"></div>
+        </div>
+        <div class="nav-links mobile-nav-menu">
+            <a href="#">Home</a>
+            <a href="#services">Vision</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="auth-form.html" class="auth-link">Log In</a>
+        </div>
+    </header>
+    <main>
+        <div class="background"></div>
+        <div class="hero">
+            <div class="content">
+                <div class="heading">
+                    <h1>miCommunity Group <span><i>New</i></span></h1>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> Stay connected</li>
+                    <li><i class="fas fa-check"></i> E-Learning</li>
+                    <li><i class="fas fa-check"></i> Find job with ease</li>
+                    <li><i class="fas fa-check"></i> Earn extra money</li>
+                </ul>
+                <div class="buttons">
+                    <a class="join" href="http://">Join us on WhatsApp</a>
+                    <a class="readmore" href="http://">Read more <i class="fas fa-arrow-down"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div id="blog" class="container white-bg">
+            <div class="heading reveal">
+                <p>miCommunity Discussions</p>
+                <h2>Latest Community Post</h2>
+            </div>
+            
+            <div id="main-post-container" class="blog-grid" style="grid-template-columns: 1fr; max-width: 800px; margin-bottom: 50px;">
+                <div class="blog-card reveal active">
+                    <div class="card-content">
+                        <h3 id="post-title">Loading Post...</h3>
+                        <p class="meta" id="post-meta"></p>
+                        <p id="post-content"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comment-section reveal" style="max-width: 800px; width: 100%; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee;">
+                <h2>Community Comments</h2>
+
+                <div id="comment-form-container" style="display: none; margin-bottom: 30px;">
+                    <h3>Leave a Comment <span id="comment-as-user"></span></h3>
+                    <form id="comment-form" class="post-form"> 
+                        <textarea id="comment-content" name="comment-content" placeholder="Your comment..." required></textarea>
+                        <button type="submit" class="join">Post Comment</button>
+                        <p class="form-message" id="comment-message" style="margin-top: 10px;"></p>
+                    </form>
+                </div>
+                
+                <div id="login-prompt" style="text-align: center; padding: 30px; border: 1px dashed #ff1489; border-radius: 8px;">
+                    <p>You must be **logged in** to leave a comment.</p>
+                    <a href="auth-form.html" class="join" style="margin-top: 15px; display: inline-block;">Log In / Sign Up</a>
+                </div>
+
+                <div id="comments-list">
+                    <p id="loading-comments">Loading comments...</p>
+                </div>
+            </div>
+
+        </div>
+        <div id="services" class="container white-bg">
+            <div class="image reveal">
+                <img src="src/images/0116a16c-7f99-4fc4-84e0-1c63ae0fec3c.jpg" alt="">
+            </div>
+            <div class="images reveal">
+                <i class="fas fa-wifi"></i>
+                <h2>Stay connected</h2>
+            </div>
+            <div class="text-image reveal">
+                <div class="text reveal">
+                    <h2>Reach out to friends across the globe</h2>
+                    <p>miCommunity brings your loved ones closer, no matter where they are. Stay connected through meaningful conversations, shared experiences, and real-time updates. Whether it's family across the globe of friends nearby, our platform makes it easy to keep relationships strong and vibrant.</p>
+                </div>
+                <div class="image reveal">
+                    <img src="src/images/girl-social-media.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="container blue-red-gradient">
+            <div class="images">
+                <i class="fas fa-graduation-cap reveal"></i>
+                <h2 class="reveal">E-Learning Platform</h2>
+                <br>
+                <img class=" reveal" width="100%" src="src/images/laptop1.png" alt="">
+            </div>
+            <div class="text-image reveal">
+                <div class="text reveal">
+                    <h2>Study online anytime, everywhere.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis, harum. Adipisci, ipsa est. Modi tempora libero aut, quam distinctio placeat asperiores minima adipisci architecto laudantium dolorum, laboriosam deserunt accusantium voluptate.</p>
+                </div>
+                <div class="image reveal">
+                    <img src="src/images/black-student-discussing-marketing-strategy-with-remote-university-teacher.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="container white-bg">
+            <div class="images reveal">
+                <i class="fas fa-search"></i>
+                <h2>Easily get job</h2>
+            </div>
+            <div class="text-image reveal">
+                <div class="image">
+                    <img src="src/images/open-laptop.jpg" alt="">
+                </div>
+                <div class="text reveal">
+                    <h2>Find job with ease.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis, harum. Adipisci, ipsa est. Modi tempora libero aut, quam distinctio placeat asperiores minima adipisci architecto laudantium dolorum, laboriosam deserunt accusantium voluptate.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container white-bg">
+            <div class="images reveal">
+                <i class="fas fa-sack-dollar"></i>
+                <h2>Invite Friends and Earn</h2>
+            </div>
+            <div class="text-image reveal">
+                <div class="text reveal">
+                    <h2>Join Our Affiliate Platform</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis, harum. Adipisci, ipsa est. Modi tempora libero aut, quam distinctio placeat asperiores minima adipisci architecto laudantium dolorum, laboriosam deserunt accusantium voluptate.</p>
+                </div>
+                <div class="image reveal">
+                    <img src="src/images/IMG_5068.JPG" alt="">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id="about" class="container about white-bg">
+            <div class="text-image reveal">
+                <div class="image">
+                    <img src="src/images/Founder1.png" alt="">
+                </div>
+                <div class="text reveal">
+                    <h2>About us</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, molestias. Alias aliquam velit harum, numquam eaque tenetur quis cupiditate delectus vel, accusantium, voluptas sit non quidem commodi sapiente ut quos!
+                    Quis minus harum similique suscipit at, eum modi, architecto inventore vitae, nesciunt dicta quia veritatis non saepe aspernatur deserunt et. Aliquid ut odit eius pariatur voluptatem fugit nulla dolor eum.
+                    Voluptates vero nisi quas itaque maiores tempore unde libero laudantium sit, harum ducimus dolores eveniet ut dolorum. Dicta, odio voluptatibus laboriosam quis deserunt porro, minima quidem deleniti iure quibusdam accusamus!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div id="contact" class="container white-bg">
+        <div class="images reveal">
+            <i class="fas fa-headset"></i>
+            <h2>Get In Touch</h2>
+            <p style="margin-top: 20px;">We are here to answer your questions and help you join the community.</p>
+        </div>
+        <div class="contact-grid reveal">
+            <p><i class="fas fa-map-marker-alt"></i> <span>123 Community St, Global City</span></p>
+            <p><i class="fas fa-envelope"></i> <span>info@micommunity.com</span></p>
+            <p><i class="fas fa-phone"></i> <span>+00 123 456 7890</span></p>
+        </div>
+    </div>
+    
+    <footer class="reveal">
+        <div class="footer-container">
+            <div class="footer-col" id="col1">
+                <h3>miCommunity</h3>
+                <p>Stay connected and grow with us.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://wa.me/yourwhatsappnumber" target="_blank" title="Join us on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col" id="col2">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#services">Vision</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" id="col3">
+                <h4>E-Learning & Jobs</h4>
+                <ul>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Job Board</a></li>
+                    <li><a href="#">Affiliate Program</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year"></span> miCommunity Group. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

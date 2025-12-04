@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>miCommunity | Log In or Sign Up</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-form reveal active">
+            <h2>Authentication</h2>
+
+            <div class="toggle-switch">
+                <button id="login-tab" class="active">Log In</button>
+                <button id="signup-tab">Sign Up</button>
+            </div>
+            
+            <form id="auth-form-body">
+                <div id="signup-fields" style="display: none;">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                    <input type="email" id="email-signup" name="email-signup" placeholder="Email Address" required>
+                    <input type="password" id="password-signup" name="password-signup" placeholder="Password (min 6 characters)" required>
+                </div>
+
+                <div id="login-fields">
+                    <input type="email" id="email-login" name="email-login" placeholder="Email Address" required>
+                    <input type="password" id="password-login" name="password-login" placeholder="Password" required>
+                </div>
+
+                <button type="submit" class="join" id="submit-button">Log In</button>
+                <p class="form-message" id="auth-message"></p>
+            </form>
+
+            <div class="social-login">
+                <p>— Or continue with —</p>
+                <a href="/api/auth/google" class="google-btn social-login-btn"><i class="fab fa-google"></i> Google</a>
+                
+                <button type="button" class="apple-btn social-login-btn"><i class="fab fa-apple"></i> Apple</button>
+                <button type="button" class="microsoft-btn social-login-btn"><i class="fab fa-microsoft"></i> Microsoft</button>
+                <button type="button" class="facebook-btn social-login-btn"><i class="fab fa-facebook-f"></i> Facebook</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
